@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Zahoor - Academic Research & Data Science Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1B3A5C;
+            --accent: #E76F51;
+            --teal: #2A9D8F;
+            --bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text: #2C3E50;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1B3A5C 0%, #0F2537 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin: 0 0 10px 0;
+        }
+
+        .hero h2 {
+            font-size: 20px;
+            color: var(--teal);
+            font-weight: 400;
+            margin: 0 0 15px 0;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #CBD5E1;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d65a3c;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 26px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            display: block;
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 32px;
+            color: var(--teal);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 15px 0;
+        }
+
+        /* Research Showcase Section */
+        .research-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background-color: #E2E8F0;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Contact & Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 60px;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 22px;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Muhammad Zahoor | Research Hub</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<div class="hero" id="about">
+    <h1>MUHAMMAD ZAHOOR</h1>
+    <h2>Department of Mathematics, Kohsar University Murree, Pakistan</h2>
+    <p>Specializing in Topological Data Analysis (TDA), Graph Classification, Geometric Deep Learning, and Mathematical Modeling. Transforming complex graph theory and topological features into reproducible Python/MATLAB algorithms and web dashboards.</p>
+    <a href="#contact" class="btn">Get In Touch</a>
+    <a href="#research" class="btn btn-outline">Explore Research</a>
+</div>
+
+<div class="container">
+
+    <!-- RESEARCH HIGHLIGHT -->
+    <div id="research">
+        <h2 class="section-title">Featured Academic Research</h2>
+        
+        <div class="research-box">
+            <span class="tag">Topological Data Analysis</span>
+            <span class="tag">Graph Classification</span>
+            <span class="tag">Geometric Deep Learning</span>
+            <h3>Graph Classification using Topological and Geometrical Features</h3>
+            <p>Developed graph classification pipelines using persistent homology, structural features, and topological invariants to extract persistent graph descriptors for classification tasks.</p>
+            <p style="font-size: 14px; color: #64748B;"><strong>Code Repository:</strong> <a href="https://github.com/MuhammadZahoor57" target="_blank" style="color: var(--teal); text-decoration: none;">GitHub Repository <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px;"></i></a></p>
+        </div>
+
+        <div class="research-box">
+            <span class="tag">TDA</span>
+            <span class="tag">Histopathology</span>
+            <span class="tag">Cell Graphs</span>
+            <h3>Graph Classification of Colorectal Cell Graphs Using Topological & Geometrical Features</h3>
+            <p>Applied higher-order topological features and geometrical graph representations to classify complex cellular architecture in histopathological image graphs.</p>
+            <p style="font-size: 14px; color: #64748B;"><strong>Experimental Pipeline:</strong> <a href="https://github.com/MuhammadZahoor57" target="_blank" style="color: var(--teal); text-decoration: none;">View Code on GitHub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px;"></i></a></p>
+        </div>
+    </div>
+
+    <!-- FREELANCE SERVICES & PRICING -->
+    <div id="services">
+        <h2 class="section-title">Services & Scientific Solutions</h2>
+        <div class="grid-3">
+            
+            <div class="card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Interactive Data Dashboards</h3>
+                <p>Custom HTML5, Chart.js, and MathJax interactive portals for researchers, labs, and data science teams.</p>
+                <div class="price">$300 – $800</div>
+                <p style="font-size: 13px; color: #64748B;">Includes live interactive graphs, formula rendering, and export options.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-diagram-project"></i>
+                <h3>Network Analysis & TDA</h3>
+                <p>Graph theory computation using NetworkX, persistent homology, simplicial complexes, and custom graph descriptors.</p>
+                <div class="price">$250 – $600</div>
+                <p style="font-size: 13px; color: #64748B;">Includes clean Python/MATLAB code scripts and detailed feature analysis.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Python ML Pipelines</h3>
+                <p>End-to-end data processing, feature extraction, graph ML classification models, and Jupyter/Colab notebook development.</p>
+                <div class="price">$200 – $500</div>
+                <p style="font-size: 13px; color: #64748B;">Includes model evaluation, accuracy metrics, and clean documented code.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div id="contact" style="text-align: center; padding: 40px 0;">
+        <h2 class="section-title">Let's Work Together</h2>
+        <p>Open for academic collaborations, PhD opportunities, research discussions, and data science consulting.</p>
+        <p style="font-weight: bold; margin-bottom: 20px;"><i class="fa-solid fa-envelope" style="color: var(--teal);"></i> zahoorkalukhel57@gmail.com</p>
+        <a href="mailto:zahoorkalukhel57@gmail.com" class="btn">Send an Email</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Muhammad Zahoor. All rights reserved.</p>
+    <div class="social-links">
+        <a href="https://github.com/MuhammadZahoor57" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/muhammad-zahoor57" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://orcid.org/0009-0004-8665-1804" target="_blank" title="ORCID"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://www.facebook.com/muhammad.zahoor.399" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+</footer>
+
+</body>
+</html>
