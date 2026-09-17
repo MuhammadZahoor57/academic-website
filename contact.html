@@ -12,25 +12,98 @@
             --bg-light: #f7fafc;
             --white: #ffffff;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { color: var(--text-color); background-color: var(--bg-light); line-height: 1.6; }
-        header { background: var(--primary-color); color: var(--white); padding: 2rem 1rem; text-align: center; }
-        nav { background: var(--accent-color); display: flex; justify-content: center; padding: 0.8rem; gap: 1.5rem; flex-wrap: wrap; }
-        nav a { color: var(--white); text-decoration: none; font-weight: 600; }
-        nav a:hover { opacity: 0.8; }
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        section { background: var(--white); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        h2 { color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem; }
-        .contact-info p { font-size: 1.1rem; margin-bottom: 0.8rem; }
-        .contact-info a { color: var(--accent-color); text-decoration: none; font-weight: 600; }
-        .contact-info a:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 1.5rem; background: var(--primary-color); color: var(--white); margin-top: 3rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+        }
+        nav {
+            background: var(--accent-color);
+            display: flex;
+            justify-content: center;
+            padding: 0.8rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            font-size: 1.1rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .contact-item strong {
+            color: var(--primary-color);
+            min-width: 130px;
+        }
+        a.link-style {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        a.link-style:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            margin-top: 3rem;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Contact & Inquiries</h1>
+        <h1>Contact Information</h1>
+        <p>Get in touch for academic collaborations, research queries, or professional services.</p>
     </header>
 
     <nav>
@@ -41,17 +114,41 @@
     </nav>
 
     <div class="container">
-        <section class="contact-info">
-            <h2>Get in Touch</h2>
-            <p>You can reach out for academic collaborations, online tutoring, or web & AI project inquiries through WhatsApp:</p>
-            <p>📱 <strong>WhatsApp 1:</strong> <a href="https://wa.me/933470103300" target="_blank">+93 347 0103300</a></p>
-            <p>📱 <strong>WhatsApp 2:</strong> <a href="https://wa.me/923165753515" target="_blank">+92 316 5753515</a></p>
+        
+        <section>
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong> 
+                    <a href="mailto:your.email@example.com" class="link-style">your.email@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Institution:</strong> 
+                    <span>Kohsar University Murree</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> 
+                    <span>Murree, Punjab, Pakistan</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Profiles:</strong> 
+                    <span>
+                        <a href="#" class="link-style" target="_blank">LinkedIn</a> | 
+                        <a href="#" class="link-style" target="_blank">Google Scholar</a> | 
+                        <a href="#" class="link-style" target="_blank">ResearchGate</a>
+                    </span>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem;">
+                * Note: Aap apna asal email address aur social profile links yahan update kar sakte hain.
+            </p>
         </section>
+
     </div>
 
-    <footer>
-        <p>&copy; 2026 Muhammad Zahoor Kalukhel. All Rights Reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Muhammad Zahoor Kalukhel. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
