@@ -3,328 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Zahoor - Academic Research & Data Science Portfolio</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Muhammad Zahoor - Academic Portfolio & Professional Services</title>
     <style>
         :root {
-            --primary: #1B3A5C;
-            --accent: #E76F51;
-            --teal: #2A9D8F;
-            --bg: #F8F9FA;
-            --card-bg: #FFFFFF;
-            --text: #2C3E50;
-            --border: #E2E8F0;
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --text-color: #2d3748;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            color: var(--text-color);
+            background-color: var(--bg-light);
             line-height: 1.6;
         }
-
-        /* Navigation */
-        nav {
-            background-color: var(--primary);
-            padding: 15px 30px;
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .profile-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        .logo {
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        .nav-links a {
-            color: #CBD5E1;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        nav {
+            background: var(--accent-color);
+            display: flex;
+            justify-content: center;
+            padding: 0.8rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        nav a {
+            color: var(--white);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-            transition: color 0.2s;
+            font-weight: 600;
+            transition: opacity 0.2s;
         }
-
-        .nav-links a:hover {
-            color: var(--accent);
+        nav a:hover {
+            opacity: 0.8;
         }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1B3A5C 0%, #0F2537 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 36px;
-            margin: 0 0 10px 0;
-        }
-
-        .hero h2 {
-            font-size: 20px;
-            color: var(--teal);
-            font-weight: 400;
-            margin: 0 0 15px 0;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: #CBD5E1;
-            max-width: 750px;
-            margin: 0 auto 30px auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #d65a3c;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            margin-left: 10px;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* Main Container */
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-
-        .section-title {
-            text-align: center;
-            color: var(--primary);
-            font-size: 26px;
-            margin-bottom: 30px;
-            position: relative;
+        section {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-
-        .section-title::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-            display: block;
-            margin: 8px auto 0 auto;
-            border-radius: 2px;
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
         }
-
-        /* Grid Layouts */
-        .grid-3 {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-            transition: transform 0.2s;
+        .service-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
         }
-
-        .card:hover {
-            transform: translateY(-5px);
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
-
-        .card i {
-            font-size: 32px;
-            color: var(--teal);
-            margin-bottom: 15px;
+        ul {
+            padding-left: 1.5rem;
         }
-
-        .card h3 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 20px;
+        li {
+            margin-bottom: 0.5rem;
         }
-
-        .price {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--accent);
-            margin: 15px 0;
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
-
-        /* Research Showcase Section */
-        .research-box {
-            background: white;
-            border: 1px solid var(--border);
-            border-left: 5px solid var(--primary);
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-
-        .tag {
-            background-color: #E2E8F0;
-            color: var(--primary);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin-right: 8px;
-            margin-bottom: 10px;
-        }
-
-        /* Contact & Footer */
         footer {
-            background: var(--primary);
-            color: white;
             text-align: center;
-            padding: 35px 20px;
-            margin-top: 60px;
-        }
-
-        .social-links {
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 22px;
-            margin: 0 12px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 28px; }
-            .grid-3 { grid-template-columns: 1fr; }
+            padding: 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            margin-top: 3rem;
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">Muhammad Zahoor | Research Hub</div>
-    <div class="nav-links">
+    <header>
+        <div class="profile-container">
+            <!-- Yahan apni picture ka link ya filename daal sakte hain -->
+            <img src="profile.jpg" alt="Muhammad Zahoor" class="profile-img">
+            <div>
+                <h1>Muhammad Zahoor</h1>
+                <p>Researcher | Data Science Specialist | Mathematics & AI Solutions</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
         <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#services">Services</a>
+        <a href="#expertise">Mathematics & Subfields</a>
+        <a href="#services">Professional Services</a>
         <a href="#contact">Contact</a>
-    </div>
-</nav>
+    </nav>
 
-<div class="hero" id="about">
-    <h1>MUHAMMAD ZAHOOR</h1>
-    <h2>Department of Mathematics, Kohsar University Murree, Pakistan</h2>
-    <p>Specializing in Topological Data Analysis (TDA), Graph Classification, Geometric Deep Learning, and Mathematical Modeling. Transforming complex graph theory and topological features into reproducible Python/MATLAB algorithms and web dashboards.</p>
-    <a href="#contact" class="btn">Get In Touch</a>
-    <a href="#research" class="btn btn-outline">Explore Research</a>
-</div>
-
-<div class="container">
-
-    <!-- RESEARCH HIGHLIGHT -->
-    <div id="research">
-        <h2 class="section-title">Featured Academic Research</h2>
+    <div class="container">
         
-        <div class="research-box">
-            <span class="tag">Topological Data Analysis</span>
-            <span class="tag">Graph Classification</span>
-            <span class="tag">Geometric Deep Learning</span>
-            <h3>Graph Classification using Topological and Geometrical Features</h3>
-            <p>Developed graph classification pipelines using persistent homology, structural features, and topological invariants to extract persistent graph descriptors for classification tasks.</p>
-            <p style="font-size: 14px; color: #64748B;"><strong>Code Repository:</strong> <a href="https://github.com/MuhammadZahoor57" target="_blank" style="color: var(--teal); text-decoration: none;">GitHub Repository <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px;"></i></a></p>
-        </div>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my professional academic portfolio. I specialize in advanced mathematical modeling, topology, data science, and modern web-AI integrations. Dedicated to pushing the boundaries of research and delivering high-quality tech & educational solutions.</p>
+        </section>
 
-        <div class="research-box">
-            <span class="tag">TDA</span>
-            <span class="tag">Histopathology</span>
-            <span class="tag">Cell Graphs</span>
-            <h3>Graph Classification of Colorectal Cell Graphs Using Topological & Geometrical Features</h3>
-            <p>Applied higher-order topological features and geometrical graph representations to classify complex cellular architecture in histopathological image graphs.</p>
-            <p style="font-size: 14px; color: #64748B;"><strong>Experimental Pipeline:</strong> <a href="https://github.com/MuhammadZahoor57" target="_blank" style="color: var(--teal); text-decoration: none;">View Code on GitHub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px;"></i></a></p>
-        </div>
-    </div>
+        <!-- Mathematics & Subfields -->
+        <section id="expertise">
+            <h2>Mathematics & Core Subfields</h2>
+            <p>My academic foundation and research span across several rigorous branches of mathematics and data science:</p>
+            <ul>
+                <li><strong>Topological Data Analysis (TDA) & Persistent Homology</strong></li>
+                <li><strong>Graph Classification & Geometric Deep Learning</strong></li>
+                <li><strong>Optimization Theory & Numerical Analysis</strong></li>
+                <li><strong>Linear Algebra, Differential Equations & Real Analysis</strong></li>
+            </ul>
+        </section>
 
-    <!-- FREELANCE SERVICES & PRICING -->
-    <div id="services">
-        <h2 class="section-title">Services & Scientific Solutions</h2>
-        <div class="grid-3">
-            
-            <div class="card">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>Interactive Data Dashboards</h3>
-                <p>Custom HTML5, Chart.js, and MathJax interactive portals for researchers, labs, and data science teams.</p>
-                <div class="price">$300 – $800</div>
-                <p style="font-size: 13px; color: #64748B;">Includes live interactive graphs, formula rendering, and export options.</p>
+        <!-- Professional Services -->
+        <section id="services">
+            <h2>Professional Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Online Tutoring</h3>
+                    <p>Expert online tutoring sessions for university and college-level Mathematics, Statistics, Data Science, and analytical problem-solving.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Website + AI Development</h3>
+                    <p>Building modern, responsive professional websites integrated with cutting-edge Artificial Intelligence tools, automated workflows, and custom scripts.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Data Science & Analytics</h3>
+                    <p>Advanced data analysis, predictive modeling, graph classification pipelines, and mathematical visualizations using Python and MATLAB.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <i class="fa-solid fa-diagram-project"></i>
-                <h3>Network Analysis & TDA</h3>
-                <p>Graph theory computation using NetworkX, persistent homology, simplicial complexes, and custom graph descriptors.</p>
-                <div class="price">$250 – $600</div>
-                <p style="font-size: 13px; color: #64748B;">Includes clean Python/MATLAB code scripts and detailed feature analysis.</p>
-            </div>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-info">
+            <h2>Contact & Inquiries</h2>
+            <p>You can reach out for academic collaborations, tutoring, or web & AI project inquiries through the numbers below:</p>
+            <p>📱 <strong>WhatsApp 1:</strong> <a href="https://wa.me/933470103300" target="_blank">+93 347 0103300</a></p>
+            <p>📱 <strong>WhatsApp 2:</strong> <a href="https://wa.me/923165753515" target="_blank">+92 316 5753515</a></p>
+            <p>📧 <strong>Email:</strong> Professional inquiries are welcome via direct messaging.</p>
+        </section>
 
-            <div class="card">
-                <i class="fa-solid fa-brain"></i>
-                <h3>Python ML Pipelines</h3>
-                <p>End-to-end data processing, feature extraction, graph ML classification models, and Jupyter/Colab notebook development.</p>
-                <div class="price">$200 – $500</div>
-                <p style="font-size: 13px; color: #64748B;">Includes model evaluation, accuracy metrics, and clean documented code.</p>
-            </div>
-
-        </div>
     </div>
-
-    <!-- CONTACT SECTION -->
-    <div id="contact" style="text-align: center; padding: 40px 0;">
-        <h2 class="section-title">Let's Work Together</h2>
-        <p>Open for academic collaborations, PhD opportunities, research discussions, and data science consulting.</p>
-        <p style="font-weight: bold; margin-bottom: 20px;"><i class="fa-solid fa-envelope" style="color: var(--teal);"></i> zahoorkalukhel57@gmail.com</p>
-        <a href="mailto:zahoorkalukhel57@gmail.com" class="btn">Send an Email</a>
-    </div>
-
-</div>
 
 <footer>
-    <p>&copy; 2026 Muhammad Zahoor. All rights reserved.</p>
-    <div class="social-links">
-        <a href="https://github.com/MuhammadZahoor57" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/muhammad-zahoor57" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://orcid.org/0009-0004-8665-1804" target="_blank" title="ORCID"><i class="fa-solid fa-graduation-cap"></i></a>
-        <a href="https://www.facebook.com/muhammad.zahoor.399" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-    </div>
+    <p>&copy; 2026 Muhammad Zahoor. All Rights Reserved.</p>
 </footer>
 
 </body>
